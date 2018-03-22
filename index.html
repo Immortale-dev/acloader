@@ -1,0 +1,26 @@
+
+<style>
+	body{
+		background-color: #000;
+		margin: 0;
+	}
+	#load{
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+	#load > div{
+		display: inline-block;
+		margin: auto;
+	}
+</style>
+
+<div id="load"></div>
+
+<script src="./lib/l.js"></script>
+
+<script>
+	var l = new Loading();
+	document.querySelector('#load').appendChild(l.DOM);
+	l.play();
+</script>
