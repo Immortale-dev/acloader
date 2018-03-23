@@ -19,8 +19,83 @@
 
 <script src="./lib/l.js"></script>
 
+
+<script id="vs" type="notjs">
+
+	attribute vec2 a_position;
+	attribute vec4 a_color;
+	
+	uniform vec2 u_resolution;
+	uniform mat3 u_matrix;
+	
+	varying vec4 v_color;
+	varying vec2 v_position;
+	
+	
+	void main(){
+	
+		//float u_fudgeFactor = 0.01;
+	
+		//vec4 position = (a_position/u_resolution)*2.0-1.0;
+		//position[1] *= -1.0;
+		
+		vec2 position;
+		vec2 tpos = a_position;
+		
+		position = (u_matrix * vec3(tpos.x,-tpos.y,1)).xy;
+		
+		position = (position/u_resolution)*2.0-1.0;
+		
+		//position = position + u_shift;
+		
+		//float zToDivideBy = 1.0 + position.z * u_fudgeFactor;
+		
+		//gl_Position = vec4(position.xy / zToDivideBy, position.zw);
+		v_position = position;
+		v_color = a_color;
+		
+		
+		gl_Position = vec4(position,0,1);
+		
+		
+	}
+
+</script>
+
+<script id="fs" type="notjs">
+
+	precision mediump float;
+	
+	//vec4 color = vec4(0.5,0.5,0.5,1);
+	
+	
+	varying vec4 v_color;
+	varying vec2 v_position;
+
+	void main(){
+		
+		//vec4 clr = texture2D(u_image,v_texcoord);
+		//vec4 fcol = vec4(u_fcolor.xyz,v_fcolor);
+
+		vec4 color = v_color;
+		/*
+		vec4 nclr = vec4(0,0,0,0);
+		nclr.x = fcol.x*fcol.w+(1.0-fcol.w)*clr.x;
+		nclr.y = fcol.y*fcol.w+(1.0-fcol.w)*clr.y;
+		nclr.z = fcol.z*fcol.w+(1.0-fcol.w)*clr.z;
+		nclr.w = v_opacity;*/
+		//Blend colors
+		
+		
+		gl_FragColor = color;
+		
+	}
+
+</script>
+
+
 <script>
-	var l = new Loading();
+	var l = new Loading({speed:0.1});
 	document.querySelector('#load').appendChild(l.DOM);
 	l.play();
 </script>
