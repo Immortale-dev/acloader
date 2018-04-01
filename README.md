@@ -1,12 +1,12 @@
 # ACO Loader Bar Generator
----
+
 
 Live preview [here](https://webdeveloperukraine.github.io/acoloader/index.html)
 ACO Loader is a tool that allows you to generate Assassin's Creed Origins loader bar, or any another similar loaders with huge customization options.
 
-![](https://webdeveloperukraine.github.io/acoloader/imgs/aco.png)
+![](https://webdeveloperukraine.github.io/acoloader/imgs/aco.gif)
 
-Libruary based on [WebGL](https://en.wikipedia.org/wiki/WebGL) canvas engine. See the browser compatibility [here](https://caniuse.com/#feat=webgl).
+Library based on [WebGL](https://en.wikipedia.org/wiki/WebGL) canvas engine. See the browser compatibility [here](https://caniuse.com/#feat=webgl).
 
 ## Table of Contest
 * [How To Use](#how-to-use)
@@ -46,43 +46,43 @@ Libruary based on [WebGL](https://en.wikipedia.org/wiki/WebGL) canvas engine. Se
 * [License](#license)
 
 ## How To Use
----
 
-Include the libruary file to your page
-```
+
+Include the library file to your page
+```javascript
 <script src="./lib/l.js"></script>
 ```
 Create the Loading Object with ```new``` identifier.
-```
+```javascript
 let l = new ACOLoading();
 ```
 Append the loading DOM anywhere you want
-```
+```javascript
 document.querySelector('#loader').appendChild(l.DOM);
 ```
 And Start the Animation
-```
+```javascript
 l.play();
 ```
 That's it :)
 
 ## How To Customize
----
 
-```ACOLoading``` Construcotor accept one options parameter with `Object` type to be passed.
+
+```ACOLoading``` Constructor accept one options parameter with `Object` type to be passed.
 Or after object has initialized you can use `setSettings` method that accepts the same parameter as constructor, or you can set each options parameter manually throught the `settings` attribute.
 
 For example:
-```
+```javascript
 let l = new ACOLoading({speed: 2, scale: 1.5});
 ```
 Or
-```
+```javascript
 let l = new ACOLoading();
 l.setSettings({speed: 2, scale: 1.5});
 ```
 Or
-```
+```javascript
 let l = new ACOLoading();
 l.settings.scale = 1.5;
 l.settings.speed = 2;
@@ -91,7 +91,7 @@ All this examples works the same.
 
 
 ## Available Option Parameters
----
+
 
 #### `speed` 
 default: `1`
@@ -179,7 +179,7 @@ default: `0`
 The time before the next gap sliding iteration.
 
 ## Available Object Instance Methods
----
+
 #### `setSettings(options: Object)`
 Allows you to set options of loading animation.
 
@@ -194,7 +194,7 @@ Will pause animation progress
 
 
 ## Available Object Instance Attributes
----
+
 #### `settings`
 Object that allows you to set or change any parameter of options object.
 
@@ -202,7 +202,7 @@ Object that allows you to set or change any parameter of options object.
 Readonly attribute, that returns you the DOM element of loader animation
 
 ## Tips And Hints
----
+
 Color values (for `color`, `fadeColor` and `gapColor`) can be passed in 2 differents color formats - hex (for example `#fff` or `#ffffff` or even with alpha channel `#ffffff00`) and rgb or rgba (for example `rgb(255,255,255)` or `rgba(255,255,255,0)`)
 
 You can change any parameter of option object through the `setSettings` method or `settings` attribute in any time you want. The animation will not be stopped, but will adapt to the new parameters immediately.
@@ -210,11 +210,11 @@ You can change any parameter of option object through the `setSettings` method o
 Be care of setting unlogical limits like `anglesCount: 1` or `lineTypesCount: 1` , I don't think it will works properly, probably some of them can freeze tab UI.
 
 ## Some Cool Examples
----
+
 
 ##### First one called "Star"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/star.jpg)
-```
+![](https://webdeveloperukraine.github.io/acoloader/imgs/star.gif)
+```javascript
 var l = new ACOLoading({
     anglesCount: 5,
     shortLineLength: 5,
@@ -227,8 +227,8 @@ var l = new ACOLoading({
 ```
 
 ##### Second one called "Fractangles"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/fraktangles.jpg)
-```
+![](https://webdeveloperukraine.github.io/acoloader/imgs/fraktangles.gif)
+```javascript
 var l = new ACOLoading({
     shortLineLength: 15,
     longLineLength: 100,
@@ -243,17 +243,17 @@ var l = new ACOLoading({
 ```
 
 ##### Third one called "Freak Petals"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/freakpetals.jpg)
-```
+![](https://webdeveloperukraine.github.io/acoloader/imgs/freakpetals.gif)
+```javascript
 var l = new ACOLoading({
-	anglesCount: 6,
+    anglesCount: 6,
     shortLineLength: 10,
     maxLength: 1400,
     gapWidth: 3,
     lineWidth: 6,
-	slowRotateAngle: 0,
-	fastRotateTime: 0,
-	slowRotateTime: 800,
+    slowRotateAngle: 0,
+    fastRotateTime: 0,
+    slowRotateTime: 800,
     lineTypesCount: 7,
     color: '#259144',
     fadeColor: '#1d20bb'
@@ -261,30 +261,28 @@ var l = new ACOLoading({
 ```
 
 ##### And the last one called "Gold Radar"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/goldradar.jpg)
-```
+![](https://webdeveloperukraine.github.io/acoloader/imgs/goldenradar.gif)
+```javascript
 var l = new ACOLoading({
-	anglesCount: 40,
+    anglesCount: 40,
     shortLineLength: 10,
     longLineLength: 10,
     maxLength: 360,
     gapWidth: 5,
     lineWidth: 35,
-	slowRotateAngle: 0,
-	fastRotateTime: 0,
-	slowRotateTime: 800,
+    slowRotateAngle: 0,
+    fastRotateTime: 0,
+    slowRotateTime: 800,
     lineTypesCount: 7,
-	longLineTime: 100,
-	shortLineTime: 100
+    longLineTime: 100,
+    shortLineTime: 100
 });
 ```
 
-Yeah, I am bad designed... I'm assured you can do better :)
+Yeah, I am not a good designer... I'm assured you can do better :)
 Enjoy!
 
 [Back to Top](#aco-loader-bar-generator)
 
 ## License
-----
-
 MIT
