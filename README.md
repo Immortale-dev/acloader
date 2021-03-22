@@ -1,10 +1,10 @@
 # ACO Loader Bar Generator
 
 
-Live preview [here](https://webdeveloperukraine.github.io/acoloader/index.html)
+Live preview [here](https://immortale-dev.github.io/acoloader/index.html)
 ACO Loader is a tool that allows you to generate Assassin's Creed Origins loader bar, or any another similar loaders with huge customization options.
 
-![](https://webdeveloperukraine.github.io/acoloader/imgs/aco.gif)
+![](https://immortale-dev.github.io/acoloader/imgs/aco.gif)
 
 Library based on [WebGL](https://en.wikipedia.org/wiki/WebGL) canvas engine. See the browser compatibility [here](https://caniuse.com/#feat=webgl).
 
@@ -213,7 +213,7 @@ Be care of setting unlogical limits like `anglesCount: 1` or `lineTypesCount: 1`
 
 
 ##### First one called "Star"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/star.gif)
+![](https://immortale-dev.github.io/acoloader/imgs/star.gif)
 ```javascript
 var l = new ACOLoading({
     anglesCount: 5,
@@ -227,7 +227,7 @@ var l = new ACOLoading({
 ```
 
 ##### Second one called "Fractangles"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/fraktangles.gif)
+![](https://immortale-dev.github.io/acoloader/imgs/fraktangles.gif)
 ```javascript
 var l = new ACOLoading({
     shortLineLength: 15,
@@ -243,7 +243,7 @@ var l = new ACOLoading({
 ```
 
 ##### Third one called "Freak Petals"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/freakpetals.gif)
+![](https://immortale-dev.github.io/acoloader/imgs/freakpetals.gif)
 ```javascript
 var l = new ACOLoading({
     anglesCount: 6,
@@ -261,7 +261,7 @@ var l = new ACOLoading({
 ```
 
 ##### And the last one called "Gold Radar"
-![](https://webdeveloperukraine.github.io/acoloader/imgs/goldenradar.gif)
+![](https://immortale-dev.github.io/acoloader/imgs/goldenradar.gif)
 ```javascript
 var l = new ACOLoading({
     anglesCount: 40,
